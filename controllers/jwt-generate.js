@@ -1,8 +1,8 @@
-const jwt = require("jsonwebtoken");
+const { SignJWT } = require("jose");
 
-module.exports = async (payload, secret, options) => {
-  // Ensure options is an object
-  options = (typeof options === 'object' && options !== null) ? options : {};
-
-  return jwt.sign(payload, secret, options);
+module.exports = async (payload, secret, expiresIn) => {
+  const jwt = await new SignJWT(payload)
+    .setExpirationTime(expiresIn)
+    .sign(new TextEncoder().encode(secret));
+  return jwt;
 };
