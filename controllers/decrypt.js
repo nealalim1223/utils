@@ -1,4 +1,4 @@
-const crypto = require("crypto");
+// const crypto = require("crypto");
 
 module.exports = async (encrypted, secret) => {
   if (!crypto) {
@@ -17,7 +17,13 @@ module.exports = async (encrypted, secret) => {
   const decrypted = await crypto.subtle.importKey("raw", key, algorithm, false, ["decrypt"]);
 
   try {
-    const decryptedText = await crypto.subtle.decrypt(algorithm, decrypted, Buffer.from(ciphertext, "base64"));
+    const decryptedText = await crypto.subtle.decrypt(
+      {
+        name: "AES-GCM",
+        iv: Buffer.from(iv, "base64"),
+      },
+      decrypted, Buffer.from(ciphertext, "base64"));
+
     return new TextDecoder().decode(decryptedText);
   } catch (error) {
     throw new Error("Failed to decrypt data.");
