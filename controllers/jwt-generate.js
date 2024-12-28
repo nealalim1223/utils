@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+// const crypto = require('crypto');
 
 module.exports = async (payload, secret) => {
   const header = {
