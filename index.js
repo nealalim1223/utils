@@ -15,3 +15,6 @@ exports.filterObject = filterObject;
 
 const formatDatetime = require("./controllers/format-datetime");
 exports.formatDatetime = formatDatetime;
+
+const generateKey = require("./controllers/generate-key");
+exports.generateKey = generateKey;
