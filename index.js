@@ -9,3 +9,6 @@ exports.jwtGenerate = jwtGenerate;
 
 const jwtVerify = require("./controllers/jwt-verify");
 exports.jwtVerify = jwtVerify;
+
+const filterObject = require("./controllers/filter-object");
+exports.filterObject = filterObject;
