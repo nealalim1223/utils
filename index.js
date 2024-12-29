@@ -12,3 +12,6 @@ exports.jwtVerify = jwtVerify;
 
 const filterObject = require("./controllers/filter-object");
 exports.filterObject = filterObject;
+
+const formatDatetime = require("./controllers/format-datetime");
+exports.formatDatetime = formatDatetime;
