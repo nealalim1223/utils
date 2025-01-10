@@ -16,5 +16,14 @@ exports.filterObject = filterObject;
 const formatDatetime = require("./controllers/format-datetime");
 exports.formatDatetime = formatDatetime;
 
+const formatLongDatetime = require("./controllers/format-long-datetime");
+exports.formatLongDatetime = formatLongDatetime;
+
 const generateKey = require("./controllers/generate-key");
 exports.generateKey = generateKey;
+
+const renderLink = require("./controllers/email-link");
+exports.renderLink = renderLink;
+
+const lipadcorpEmailTemplate = require("./controllers/email-template-lipadcorp");
+exports.lipadcorpEmailTemplate = lipadcorpEmailTemplate;

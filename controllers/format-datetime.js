@@ -7,7 +7,12 @@ module.exports = (date) => {
     minute: '2-digit',
     second: '2-digit',
     hour12: true,
-    timeZone: 'Asia/Manila',
+    // timeZone: 'Asia/Manila',
   };
-  return new Intl.DateTimeFormat('en-US', options).format(date).replace(',', '');
+
+  const formattedDate = new Date(date).toLocaleString('en-US', options);
+  const [month, day, year] = formattedDate.split(', ')[0].split('/');
+  const [time, period] = formattedDate.split(', ')[1].split(' ');
+
+  return `${year}-${month}-${day} ${time} ${period}`;
 }
