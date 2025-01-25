@@ -119,7 +119,7 @@ const emailApproverSection = (type, currentUrl, data, currentApprover) => {
           <p><b>Email:</b> ${approval.email}</p>
           <p><b>Role:</b> ${approval.role}</p>
           ${approval.comment && (`<p><b>Comment:</b> ${approval.comment}</p>`)}
-          ${approval.timestamp && (`<p><b>Timestamp:</b> ${formatLongDatetime(approval.timestamp._seconds * 1000)}</p>`)}
+          ${approval.timestamp && approval.timestamp._seconds !== undefined && (`<p><b>Timestamp:</b> ${formatLongDatetime(approval.timestamp._seconds * 1000)}</p>`)}
           ${index < data.approval.length - 1 ? '<hr style="width:100%;border:none;border-top:1px solid #CCCCCC;margin:0" />' : ''}
         `;
   }).join('')}
