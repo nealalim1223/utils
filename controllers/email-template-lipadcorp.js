@@ -118,9 +118,9 @@ const emailApproverSection = (type, currentUrl, data, currentApprover) => {
           <p><b>Approver:</b> ${approval.approver}</p>
           <p><b>Email:</b> ${approval.email}</p>
           <p><b>Role:</b> ${approval.role}</p>
-          ${approval.attachment && (`<p><b>Attachment:</b> <br><a href="${approval.attachment}" target="_blank"><img src="${approval.attachment}" alt="Attachment" style="width:100px;height:100px;" /></a></p>`)}
+          ${approval.attachment && (`<p><b>Attachment:</b> <br><a href="${approval.attachment}" target="_blank"><img src="${approval.attachment}" alt="Attachment" style="width:100px;height:100px;margin-top:5px" /></a></p>`)}
           ${approval.comment && (`<p><b>Comment:</b> ${approval.comment}</p>`)}
-          ${approval.timestamp || approval.timestamp !== undefined && approval.timestamp._seconds !== undefined && (`<p><b>Timestamp:</b> ${formatLongDatetime(approval.timestamp._seconds * 1000)}</p>`)}
+          ${approval.timestamp && (`<p><b>Timestamp:</b> ${formatLongDatetime(approval.timestamp._seconds * 1000)}</p>`)}
           ${index < data.approval.length - 1 ? '<hr style="width:100%;border:none;border-top:1px solid #CCCCCC;margin:0" />' : ''}
         `;
   }).join('')}
