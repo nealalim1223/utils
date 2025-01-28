@@ -1,6 +1,6 @@
 {
   "name": "@nealalim26/utils",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Personal utility functions",
   "main": "index.js",
   "scripts": {
