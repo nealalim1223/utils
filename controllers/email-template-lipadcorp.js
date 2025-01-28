@@ -118,9 +118,9 @@ const emailApproverSection = (type, currentUrl, data, currentApprover) => {
           <p><b>Approver:</b> ${approval.approver}</p>
           <p><b>Email:</b> ${approval.email}</p>
           <p><b>Role:</b> ${approval.role}</p>
-          ${approval.attachment && approval.attachment !== undefined && (`<p><b>Attachment:</b> <br><a href="${approval.attachment}" target="_blank"><img src="${approval.attachment}" alt="Attachment" style="width:100px;height:100px;margin-top:10px" /></a></p>`)}
-          ${approval.comment && approval.comment !== undefined && (`<p><b>Comment:</b> ${approval.comment}</p>`)}
-          ${approval.timestamp && approval.timestamp.seconds !== undefined && (`<p><b>Timestamp:</b> ${formatLongDatetime(approval.timestamp.seconds * 1000)}</p>`)}
+          ${approval.attachment && approval.attachment !== undefined ? (`<p><b>Attachment:</b> <br><a href="${approval.attachment}" target="_blank"><img src="${approval.attachment}" alt="Attachment" style="width:auto;height:120px;margin-top:10px;border-radius:5px" /></a></p>`) : ''}
+          ${approval.comment && approval.comment !== undefined ? (`<p><b>Comment:</b> ${approval.comment}</p>`) : ''}
+          ${approval.timestamp && approval.timestamp.seconds !== undefined ? (`<p><b>Timestamp:</b> ${formatLongDatetime(approval.timestamp.seconds * 1000)}</p>`) : ''}
           ${index < data.approval.length - 1 ? '<hr style="width:100%;border:none;border-top:1px solid #CCCCCC;margin:0" />' : ''}
         `;
   }).join('')}
