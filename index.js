@@ -30,3 +30,6 @@ exports.lipadcorpEmailTemplate = lipadcorpEmailTemplate;
 
 const verificationEmailTemplate = require("./controllers/email/template/lipadcorp/verification");
 exports.verificationEmailTemplate = verificationEmailTemplate;
+
+const getFileExtensionFirebase = require("./controllers/get-file-extension-firebase");
+exports.getFileExtensionFirebase = getFileExtensionFirebase;
