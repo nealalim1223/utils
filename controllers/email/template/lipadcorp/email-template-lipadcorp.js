@@ -1,4 +1,4 @@
-const formatLongDatetime = require("./format-long-datetime");
+const formatLongDatetime = require("../../../utils/format-long-datetime");
 
 module.exports = (type, currentUrl, data, emailData, currentApprover) => {
   const renderDetail = (label, value) => `<p><b>${label}:</b> ${value}<br/></p>`;
