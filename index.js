@@ -19,6 +19,9 @@ exports.lipadcorpEmailTemplate = lipadcorpEmailTemplate;
 const verificationEmailTemplate = require("./controllers/email/template/lipadcorp/verification");
 exports.verificationEmailTemplate = verificationEmailTemplate;
 
+const emailMessageNotification = require("./controllers/email/template/lipadcorp/email-message");
+exports.emailMessageNotification = emailMessageNotification;
+
 const renderLink = require("./controllers/email/template/lipadcorp/email-link");
 exports.renderLink = renderLink;
 
